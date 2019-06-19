@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="img.favicon.png">
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -31,16 +32,16 @@
             </div>
         </div>
         <!-- eof topnav -->
-        <div class="nav">
+        <div id="navBar" class="nav">
             <ul>
-                <li class="active"><a href="home.php">homepage</a></li>
-                <li><a href="home.php">styledemo</a></li>
-                <li><a href="home.php">fullwidth</a></li>
-                <li><a href="home.php">dropdown</a></li>
-                <li><a href="home.php">gallery</a></li>
-                <li><a href="home.php">portfolio</a></li>
-                <li><a href="home.php">linktext</a></li>
-                <li><a href="home.php">longlinktext</a></li>
+                <li class="nav-links active"><a href="#">homepage</a></li>
+                <li class="nav-links"><a href="#">styledemo</a></li>
+                <li class="nav-links"><a href="#">fullwidth</a></li>
+                <li class="nav-links"><a href="#">dropdown</a></li>
+                <li class="nav-links"><a href="#">gallery</a></li>
+                <li class="nav-links"><a href="#">portfolio</a></li>
+                <li class="nav-links"><a href="#">linktext</a></li>
+                <li class="nav-links"><a href="#">longlinktext</a></li>
             </ul>
         </div>
         <!--header  -->
@@ -133,9 +134,9 @@
 
         <!-- footer -->
         <div class="footer">
-            <div class="item left ">Left content</div>
-            <div class="item middle">Middle content</div>
-            <div class="item right">Right content</div>
+            <div class="left"></div>
+            <div class="middle"></div>
+            <div class="right"></div>
         </div>
 
 
@@ -146,8 +147,21 @@
 
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var navbar = document.getElementById('navBar');
+        var navlink = navbar.getElementsByClassName('nav-links');
+        console.log(navlink);
+        for (var i = 0; i < navlink.length; i++) {
+            navlink[i].addEventListener('click', function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
 
+
+
+    </script>
 </body>
 
 </html>

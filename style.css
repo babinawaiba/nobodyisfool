@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {font-weight: 700;}
     
 }
 
-.active {
+.active, .nav li:hover {
     background-color: green; 
 }
 
@@ -62,10 +62,6 @@ h1, h2, h3, h4, h5, h6 {font-weight: 700;}
     display: flex;
     justify-content: space-between;
     padding: 45px 0px;
-}
-
-.search {
-    
 }
 
 #search-area {
